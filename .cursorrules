@@ -1,0 +1,22 @@
+# Cursor Rules for KirzKit
+
+## 🎨 Visual & UI/UX
+- Use Linear-style design: modern, sleek, high-precision.
+- Animations: Prefer Framer Motion with smooth springs and layout transitions.
+- Styling: Use Tailwind CSS with clean utility patterns or Vanilla CSS.
+- Visuals: If needed, generate SVG shapes or CSS patterns to keep the prototype "alive."
+
+## 🏗️ Architecture
+- **Framework**: React (TypeScript) + Next.js.
+- **Backend**: Supabase for CRUD, real-time, and auth.
+- **Monetization**: Stripe with subscription-first logic.
+- **User Management**: Clerk for professional auth.
+
+## 🛠️ Code Standards
+- **Clean Code**: Follow SOLID and DRY. Use concise, readable abstractions.
+- **Types**: Use strict TypeScript types. Avoid `any`.
+- **Validation**: Ensure all inputs and API results are validated.
+
+## 🧠 KirzKit Specials
+- **Orchestration**: If the task is complex, suggest a plan first.
+- **Context**: Use the `references/` directory in this toolkit for specific agent roles and skill deep-dives.
