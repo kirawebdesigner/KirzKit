@@ -25,6 +25,7 @@ KirzKit provides 70 Expert Skills for specialized technical and creative tasks.
 ## SaaS & Growth
 
 - **stripe-payments**: Monetization and subscriptions.
+- **ethiopian-payments**: Expert Chapa, Telebirr, and Arifpay integration.
 - **clerk-auth-master**: Professional user management.
 - **saas-growth-hacking**: Viral loops and conversion optimization.
 - **seo-fundamentals**: Organic visibility and ranking strategy.
