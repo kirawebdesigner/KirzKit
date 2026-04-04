@@ -1,79 +1,48 @@
-# 🧠 KirzKit: The Self-Evolving AI Framework
+# 🧩 KirzKit: The SaaS Founder's AI Engine
 
-**KirzKit** is a high-velocity SaaS building ecosystem and modular "Second Brain" designed for world-class developers. It is a **Self-Evolving Framework** that can dynamically ingest new skills, agents, and workflows.
+**"Build at the speed of thought. Launch with the power of a team."**
 
----
-
-## 🔥 What's Inside (Synced from ag-kit)
-
-KirzKit now hosts a comprehensive network of capabilities synced directly from your **Antigravity Kit (ag-kit)**:
-
-- **27 Specialist Agents**: Orchestrator, Frontend Specialist, Backend Specialist, Database Architect, Growth Engineer, and more.
-- **70+ Expert Skills**: From `stripe-payments` and `supabase-expert` to `framer-motion-master` and `template-architect`.
-- **14 Master Workflows**: `/plan`, `/ui-audit`, `/landing-page-teardown`, `/refine`, and `/template-customizer`.
-- **Self-Evolution Engine**: Built-in scripts to ingest new capabilities instantly.
+KirzKit is a **Sovereign AI Framework** designed for solo founders and high-velocity engineers. It transforms messy, raw ideas into world-class software by orchestrating a private network of **27 Specialist Agents** and **70+ Expert Skills**.
 
 ---
 
-## 🚀 How to Use (Universal Access)
-
-KirzKit is built to be instantly accessible across all your AI tools.
-
-### 🦾 For OpenClaw
-1.  **Install**: Point OpenClaw to this repository.
-2.  **Usage**: OpenClaw reads `SKILL.md` to load the KirzKit brain. It will automatically trigger on terms like "landing page," "SaaS build," or "UI audit."
-
-### 🤖 For Gemini CLI
-1.  **Activate**: `cd` into the project directory.
-2.  **Usage**: Gemini CLI reads `GEMINI.md` at the root. It will immediately adopt the "Sovereign AI Architect" persona and follow the KirzKit orchestration rules.
-
-### 🛠️ For Claude Code
-1.  **Activate**: `cd` into the project directory.
-2.  **Usage**: Claude Code reads `CLAUDE.md`. It will prioritize high-signal communication and follow the `/plan` and `/ui-audit` workflows.
-
-### 🎨 For Cursor
-1.  **Setup**: Keep this directory open in Cursor.
-2.  **Usage**: Cursor uses `.cursorrules` to enforce the "Linear-style" UI aesthetic, Framer Motion standards, and Supabase architecture.
-
-### 🌍 For Any AI (Copy-Paste)
-1.  **Usage**: Open `PROMPT.md` (Total Brain) and paste the entire content into ChatGPT, Claude (Web), or Gemini (Web) to turn it into a KirzKit Master instantly.
+## ⚡ The "One-Minute" Value Prop
+KirzKit isn't just a library; it's an **Intelligence Layer**. 
+1.  **Talk Normally**: Give it a messy project idea.
+2.  **Autonomous Planning**: It refines the prompt, builds a `/plan`, and delegates to specialists.
+3.  **Elite Execution**: It builds high-fidelity UI (Framer Motion + Tailwind) and robust backends (Supabase + Clerk) automatically.
 
 ---
 
-## 🧬 Self-Evolution: Ingesting New Skills
+## 🚀 Quick Start: From Idea to SaaS
 
-KirzKit can expand its own brain. To add a new skill or agent from any local path:
+### 1. The "Messy" Input
+Tell the AI: *"I want to build a Muslim dating app called Zewijuna with Supabase and a sleek minimalist UI."*
 
-**Command:**
-```bash
-python scripts/ingest_skill.py <path-to-resource> <type: skills|agents|workflows>
-```
+### 2. The KirzKit Response
+KirzKit will automatically:
+-   Invoke `prompt-engineering-master` to refine the spec.
+-   Run `/plan` to map the Database, Auth, and UI tasks.
+-   Delegate to `frontend-specialist` and `database-architect`.
 
-**Trigger:**
-> "AI, ingest this skill from [path] into KirzKit."
-
----
-
-## 📂 Structure
-
-- `SKILL.md`: OpenClaw-specific "brain" with YAML triggers.
-- `GEMINI.md`: Gemini CLI persona, self-evolution rules, and workflows.
-- `CLAUDE.md`: Claude Code memory and standards.
-- `.cursorrules`: Rules for high-fidelity UI & animations.
-- `agents/`: Full directory of **27 Specialist Agents**.
-- `skills/`: Comprehensive library of **70+ Expert Skills**.
-- `workflows/`: Modular **14 Master Workflows**.
-- `scripts/`: Automation scripts (`ingest_skill.py`, `checklist.py`, `verify_all.py`).
-- `assets/`: Starter templates and boilerplate.
+### 3. The Result
+A functional, high-fidelity prototype ready for launch.
 
 ---
 
-## 🛠️ Tech Stack Focus
-- **Frontend**: React (TS), Next.js, Framer Motion, Tailwind.
-- **Backend**: Supabase (BYOD architecture), Node.js.
-- **Auth/Payments**: Clerk, Stripe.
-- **Design**: Linear-style, minimalist, high-precision.
+## 🧬 Self-Evolving Brain
+KirzKit grows with you. Found a new tech stack?
+`python scripts/ingest_skill.py <path> <type>`
+The framework absorbs the knowledge and makes it available to all future projects.
 
 ---
 
-© 2026 Kirubel Daniel | Built for high-velocity builders.
+## 📂 System Architecture
+- **`agents/`**: Your 27 specialist personas (Orchestrator, SEO, DevOps).
+- **`skills/`**: 70+ modular abilities (Stripe, Resend, Motion).
+- **`workflows/`**: 14 master playbooks (`/ui-audit`, `/plan`).
+- **`GEMINI.md` / `CLAUDE.md`**: The core DNA for AI tool integration.
+
+---
+
+Built by **Kirubel Daniel** | *Engineering leverage for the next generation of founders.*
