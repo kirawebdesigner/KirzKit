@@ -1,107 +1,71 @@
-# 🧩 KirzKit: The Sovereign AI Architect & SaaS Engine
+# 🧩 KirzKit: The Developer's Toolkit
 
-**"Build at the speed of thought. Launch with the power of a team."**
+**"Build faster. Ship cleaner. Scale smarter."**
 
-**KirzKit** is a recursive, self-evolving AI framework designed for solo founders and high-velocity engineers. It isn't just a "starter kit"—it is a **Sovereign Intelligence Layer** that sits on top of your AI tools (Gemini CLI, Claude Code, Cursor) to automate the entire software development lifecycle.
-
----
-
-## 🔥 The "Intelligence Layer" Architecture
-
-KirzKit provides a private, high-fidelity agency at your fingertips:
-
-### 🦾 27 Specialist Agents
-A fleet of expert personas synced from the **Antigravity Kit (ag-kit)**, including:
-- **Orchestrator**: Strategic lead for multi-agent coordination.
-- **Frontend Specialist**: High-fidelity UI (React + Framer Motion + Tailwind).
-- **Backend Specialist**: Supabase, Clerk, and API logic.
-- **Database Architect**: Schema design and performance tuning.
-- **Growth Engineer**: SaaS metrics, viral loops, and conversion hooks.
-- **Website Architect**: Landing page strategy and **Surgical Template Modification**.
-
-### ⚡ 70+ Expert Skills
-Modular capabilities that the AI can "activate" on-demand:
-- **`stripe-payments`**: Full-stack checkout and subscription logic.
-- **`supabase-expert`**: RLS, Real-time, and CRUD mastery.
-- **`template-architect`**: Surgical modification of Webflow/Framer exports.
-- **`framer-motion-master`**: High-end interactive animations.
-- **`prompt-engineering-master`**: Self-refinement of "messy" user input.
-
-### 📜 14 Master Workflows
-Standardized procedures for elite-tier execution:
-- `/plan`: Technical roadmapping and dependency mapping.
-- `/ui-audit`: evaluation of design and UX quality.
-- `/landing-page-teardown`: Conversion and copy optimization.
-- `/refine`: Autonomous prompt and logic optimization.
+**KirzKit** is a modular toolkit and automation system for solo developers and SaaS founders. It streamlines your workflow by orchestrating a library of reusable agents, components, and scripts—so you stop rewriting the same boilerplate and start launching products.
 
 ---
 
-## 🧠 The Sovereign Execution Loop (How it Works)
+## ⚡ What can I do with KirzKit?
 
-KirzKit is designed to handle "messy" human thoughts and turn them into "perfect" technical execution autonomously.
+KirzKit turns raw ideas into functional apps by handling the heavy lifting.
 
-1.  **Analyze & Refine**: KirzKit takes your raw input and uses its internal prompt engineering skills to "upgrade" it into a professional Technical Objective.
-2.  **Architectural Planning**: It invokes the `/plan` workflow to create a structured `PLAN.md`, identifying the exact agents and skills required.
-3.  **Parallel Multi-Agent Swarm**: Like "Claude Code," it acts as a conductor, delegating sub-tasks to specialists in parallel turns for maximum velocity.
-4.  **Autonomous Action (The Whitelist)**: It is authorized to run "Safe Commands" (builds, tests, status checks) without pausing for permission.
-5.  **Surgical Execution**: It uses the `template-architect` to inject logic into design exports without breaking the UI.
-
----
-
-## 🛠️ Universal Setup Guide
-
-KirzKit is built to be the "Standard OS" for your AI development environment.
-
-### 1. For Gemini CLI (Primary Engine)
-- **Activate**: `cd` into the KirzKit directory.
-- **DNA**: Gemini reads `GEMINI.md` and adopts the **Sovereign Architect** persona.
-- **Command**: Just talk normally. KirzKit will handle the rest.
-
-### 2. For Claude Code
-- **Activate**: `cd` into the directory.
-- **DNA**: Claude reads `CLAUDE.md` to follow KirzKit standards and workflows.
-
-### 3. For Cursor (The "Alive" IDE)
-- **Setup**: Open the KirzKit directory in Cursor.
-- **DNA**: Cursor uses `.cursorrules` to enforce **Linear-style** UI, minimalist aesthetics, and high-performance standards.
-
-### 4. For OpenClaw
-- **Install**: Point OpenClaw to this repository.
-- **DNA**: OpenClaw reads `SKILL.md` to load the KirzKit brain and YAML triggers.
+**Example: "Build me a SaaS landing page for a fitness app"**
+→ KirzKit will:
+- **Plan**: Create the project roadmap (`PLAN.md`).
+- **Setup UI**: Scaffold React + Tailwind + Framer Motion.
+- **Animations**: Add high-end interactions.
+- **Backend**: Configure Supabase (DB + Auth).
+- **Payments**: Integrate Stripe Checkout.
+*...all from one prompt.*
 
 ---
 
-## 🧬 Self-Evolution: Expand the Brain
+## 🛠️ The Toolkit
 
-KirzKit is a living framework. You can add new capabilities (skills, agents, or workflows) from any local path instantly.
+KirzKit is built from three core layers:
 
-### Ingestion Command:
-```bash
-python scripts/ingest_skill.py <path-to-resource> <type: skills|agents|workflows>
-```
+### 1. 🦾 Specialist Agents
+A library of 27 "experts" that handle specific tasks:
+- **Frontend Specialist**: React, Tailwind, Framer Motion.
+- **Backend Specialist**: Supabase, Clerk, API logic.
+- **Database Architect**: Schema design and migrations.
+- **Website Architect**: Fast landing page modifications.
 
-### AI Trigger:
-> "AI, ingest this skill from [path] into KirzKit."
+### 2. ⚡ Expert Skills
+70+ reusable assets and utilities:
+- **`template-architect`**: Customizes exported templates without breaking the design.
+- **`stripe-payments`**: Ready-to-go payment integrations.
+- **`supabase-expert`**: Pre-configured auth and DB patterns.
+
+### 3. 📜 Master Workflows
+Standardized processes to keep your projects clean:
+- `/plan`: Generate an immediate roadmap.
+- `/ui-audit`: Improve your design and UX.
+- `/refine`: Optimize your code and logic.
 
 ---
 
-## 📋 The KirzKit Tech Stack Standard
-To ensure world-class performance and design, KirzKit defaults to:
-- **Frontend**: React (TS), Next.js, Framer Motion, Tailwind CSS.
-- **Backend**: Supabase (BYOD architecture), Node.js.
-- **Auth/Payments**: Clerk, Stripe.
-- **Aesthetic**: "Linear-style"—minimal, sleek, and high-precision.
+## 🚀 Get Started
+
+1.  **Activate**: `cd` into your KirzKit project folder.
+2.  **Think**: Tell me what you want to build (e.g., "Build a dashboard for my SaaS").
+3.  **Execute**: I’ll plan the architecture, set up the stack, and handle the integration.
+
+### Self-Evolution
+Got a new component or script? Add it to KirzKit:
+`python scripts/ingest_skill.py <path> <type>`
+It becomes part of your personal toolkit forever.
 
 ---
 
 ## 📂 Project Structure
-- `agents/`: Full directory of **27 Specialist Agents**.
-- `skills/`: Comprehensive library of **70+ Expert Skills**.
-- `workflows/`: Modular **14 Master Workflows**.
-- `references/`: Detailed technical documentation.
-- `scripts/`: Automation scripts (`ingest_skill.py`, `checklist.py`, `verify_all.py`).
-- `assets/`: Starter templates and design assets.
+- `agents/`: Your specialist experts.
+- `skills/`: Reusable code and automation utilities.
+- `workflows/`: Standardized project playbooks.
+- `scripts/`: Development and validation tools.
+- `assets/`: Templates and boilerplate code.
 
 ---
 
-Built by **Kirubel Daniel** | *Engineering leverage for the next generation of founders.*
+*Built by Kirubel Daniel | High-velocity tools for the next generation of builders.*
