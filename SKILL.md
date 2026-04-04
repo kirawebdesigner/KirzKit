@@ -49,10 +49,11 @@ Trigger: "Setup Supabase" or "Configure Clerk auth"
 3.  **Auth**: Apply `clerk-auth-master` skill for professional user management.
 
 ### UI Implementation
-Trigger: "Build this UI" or "Implement design"
+Trigger: "Build this UI" or "Implement design" or "Customize template"
 1.  **Foundations**: Use `frontend-specialist` with `shadcn-ui-master` and `tailwind-patterns`.
 2.  **Animations**: Apply `framer-motion-master` for high-end interactions.
 3.  **Visuals**: Generate placeholders or diagrams using `napkin-ai-builder`.
+4.  **Template Customization**: For Webflow/Framer exports, consult `references/template-architect.md` for surgical modifications.
 
 ## 📜 Key Rules
 - **Imperative Voice**: Always use direct commands ("Run the audit", "Generate the schema").
