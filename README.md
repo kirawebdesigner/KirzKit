@@ -1,6 +1,17 @@
-# 🧠 KirzKit: The Universal AI "Second Brain"
+# 🧠 KirzKit: The Self-Evolving AI Framework
 
-KirzKit is a high-velocity SaaS building ecosystem and modular "Second Brain" designed for world-class developers. It contains 27 Specialist Agents, 70 Expert Skills, and 19 Workflows.
+**KirzKit** is a high-velocity SaaS building ecosystem and modular "Second Brain" designed for world-class developers. It is a **Self-Evolving Framework** that can dynamically ingest new skills, agents, and workflows.
+
+---
+
+## 🔥 What's Inside (Synced from ag-kit)
+
+KirzKit now hosts a comprehensive network of capabilities synced directly from your **Antigravity Kit (ag-kit)**:
+
+- **27 Specialist Agents**: Orchestrator, Frontend Specialist, Backend Specialist, Database Architect, Growth Engineer, and more.
+- **70+ Expert Skills**: From `stripe-payments` and `supabase-expert` to `framer-motion-master` and `template-architect`.
+- **14 Master Workflows**: `/plan`, `/ui-audit`, `/landing-page-teardown`, `/refine`, and `/template-customizer`.
+- **Self-Evolution Engine**: Built-in scripts to ingest new capabilities instantly.
 
 ---
 
@@ -29,14 +40,30 @@ KirzKit is built to be instantly accessible across all your AI tools.
 
 ---
 
+## 🧬 Self-Evolution: Ingesting New Skills
+
+KirzKit can expand its own brain. To add a new skill or agent from any local path:
+
+**Command:**
+```bash
+python scripts/ingest_skill.py <path-to-resource> <type: skills|agents|workflows>
+```
+
+**Trigger:**
+> "AI, ingest this skill from [path] into KirzKit."
+
+---
+
 ## 📂 Structure
 
 - `SKILL.md`: OpenClaw-specific "brain" with YAML triggers.
-- `GEMINI.md`: Gemini CLI persona and workflows.
+- `GEMINI.md`: Gemini CLI persona, self-evolution rules, and workflows.
 - `CLAUDE.md`: Claude Code memory and standards.
 - `.cursorrules`: Rules for high-fidelity UI & animations.
-- `references/`: Detailed directories for **Agents**, **Workflows**, and **Skills**.
-- `scripts/`: Automation scripts (`checklist.py`, `verify_all.py`).
+- `agents/`: Full directory of **27 Specialist Agents**.
+- `skills/`: Comprehensive library of **70+ Expert Skills**.
+- `workflows/`: Modular **14 Master Workflows**.
+- `scripts/`: Automation scripts (`ingest_skill.py`, `checklist.py`, `verify_all.py`).
 - `assets/`: Starter templates and boilerplate.
 
 ---
