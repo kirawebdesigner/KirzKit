@@ -1,71 +1,74 @@
-# 🧩 KirzKit: The Developer's Toolkit
+# KirzKit
 
-**"Build faster. Ship cleaner. Scale smarter."**
+KirzKit is a local AI builder toolkit for bootstrapping project brains, specialist prompts, and reusable workflows. It is designed to install a project-local `.agent` directory so an AI environment can plan, orchestrate, and execute work with consistent operating rules.
 
-**KirzKit** is a modular toolkit and automation system for solo developers and SaaS founders. It streamlines your workflow by orchestrating a library of reusable agents, components, and scripts—so you stop rewriting the same boilerplate and start launching products.
+KirzKit is not an application framework or runtime dependency. It is an instruction and tooling layer that sits around your project.
 
----
+## What KirzKit Does
 
-## ⚡ What can I do with KirzKit?
+- installs a reusable project-local `.agent` brain
+- provides specialist agent personas for frontend, backend, database, testing, security, and planning tasks
+- ships modular skill packs and workflow guides
+- generates a `MASTER_KNOWLEDGE_MAP.md` so the active project knows what is installed
+- supports a plan-first workflow anchored on `/plan`
 
-KirzKit turns raw ideas into functional apps by handling the heavy lifting.
+## Core Workflow
 
-**Example: "Build me a SaaS landing page for a fitness app"**
-→ KirzKit will:
-- **Plan**: Create the project roadmap (`PLAN.md`).
-- **Setup UI**: Scaffold React + Tailwind + Framer Motion.
-- **Animations**: Add high-end interactions.
-- **Backend**: Configure Supabase (DB + Auth).
-- **Payments**: Integrate Stripe Checkout.
-*...all from one prompt.*
+The intended execution loop is:
 
----
+1. refine the request into a technical objective
+2. start with `/plan`
+3. map the relevant agents and skills
+4. execute work in parallel where safe
+5. verify before delivery
 
-## 🛠️ The Toolkit
+## Installation and Usage
 
-KirzKit is built from three core layers:
+Global install:
 
-### 1. 🦾 Specialist Agents
-A library of 27 "experts" that handle specific tasks:
-- **Frontend Specialist**: React, Tailwind, Framer Motion.
-- **Backend Specialist**: Supabase, Clerk, API logic.
-- **Database Architect**: Schema design and migrations.
-- **Website Architect**: Fast landing page modifications.
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install_kirzkit.ps1
+```
 
-### 2. ⚡ Expert Skills
-70+ reusable assets and utilities:
-- **`template-architect`**: Customizes exported templates without breaking the design.
-- **`stripe-payments`**: Ready-to-go payment integrations.
-- **`supabase-expert`**: Pre-configured auth and DB patterns.
+Project bootstrap:
 
-### 3. 📜 Master Workflows
-Standardized processes to keep your projects clean:
-- `/plan`: Generate an immediate roadmap.
-- `/ui-audit`: Improve your design and UX.
-- `/refine`: Optimize your code and logic.
+```powershell
+.\scripts\kirzkit.ps1 init
+```
 
----
+This deploys KirzKit into the current project by creating:
 
-## 🚀 Get Started
+- `.agent/agents`
+- `.agent/skills`
+- `.agent/workflows`
+- `.agent/rules`
+- `.agent/scripts`
+- `.agent/references`
+- `.agent/assets`
+- `.agent/MASTER_KNOWLEDGE_MAP.md`
+- `.agrules`
+- `ACTIVATE_KIRZKIT.md`
 
-1.  **Activate**: `cd` into your KirzKit project folder.
-2.  **Think**: Tell me what you want to build (e.g., "Build a dashboard for my SaaS").
-3.  **Execute**: I’ll plan the architecture, set up the stack, and handle the integration.
+Validation:
 
-### Self-Evolution
-Got a new component or script? Add it to KirzKit:
-`python scripts/ingest_skill.py <path> <type>`
-It becomes part of your personal toolkit forever.
+```powershell
+.\scripts\kirzkit.ps1 doctor
+```
 
----
+## Key Files
 
-## 📂 Project Structure
-- `agents/`: Your specialist experts.
-- `skills/`: Reusable code and automation utilities.
-- `workflows/`: Standardized project playbooks.
-- `scripts/`: Development and validation tools.
-- `assets/`: Templates and boilerplate code.
+- `GEMINI.md`: Gemini-oriented root persona and operating rules
+- `CLAUDE.md`: Claude-oriented root persona and operating rules
+- `SKILL.md`: root skill metadata and execution guidance
+- `PROMPT.md`: high-level prompting entrypoint
+- `references/`: reference material for agents, skills, and workflows
+- `scripts/`: helper scripts such as validation, preview, and skill ingestion
 
----
+## Notes
 
-*Built by Kirubel Daniel | High-velocity tools for the next generation of builders.*
+- counts of agents, skills, and workflows change over time; use the CLI or generated knowledge map for current numbers
+- KirzKit works best when the AI environment can read the project-local `.agent` folder
+- if the environment does not auto-load `.agent`, point the AI to the root files and `MASTER_KNOWLEDGE_MAP.md`
+- use `ACTIVATE_KIRZKIT.md` inside each initialized project as the handoff file for any AI tool
+
+Built by Kirubel Daniel.
