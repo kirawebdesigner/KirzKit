@@ -36,7 +36,7 @@ KirzKit gives your agent a consistent way to work:
 
 The repository currently includes:
 
-- **26 specialist agents** covering architecture, frontend, backend, databases, security, testing, DevOps, product, design, growth, and more
+- **23 top-level specialist agent personas**, plus folder-based and mirrored agency agents covering architecture, frontend, backend, databases, security, testing, DevOps, product, design, growth, and more
 - **200+ modular skills** for engineering, UI/UX, research, automation, infrastructure, content, video, diagrams, and product work
 - **16 workflow guides** including `/plan`, `/debug`, `/deploy`, `/test`, `/preview`, and `/orchestrate`
 - **multi-agent routing** that selects the right expertise for the task
