@@ -1,80 +1,81 @@
 # KirzKit
 
-KirzKit is a local AI operating layer for builders who want their coding agents to plan better, execute with structure, and reuse a serious project brain instead of starting from zero every time.
+### Give your coding agent a specialist team, a repeatable workflow, and built-in quality gates.
 
-It installs a project-local `.agent` system with specialist personas, reusable skills, workflow guides, and activation files so tools like Claude, Gemini, Codex, and other agent runners can work with a stronger operating model.
+[![GitHub stars](https://img.shields.io/github/stars/kirawebdesigner/KirzKit?style=for-the-badge&logo=github)](https://github.com/kirawebdesigner/KirzKit/stargazers)
+[![Last commit](https://img.shields.io/github/last-commit/kirawebdesigner/KirzKit?style=for-the-badge&logo=git)](https://github.com/kirawebdesigner/KirzKit/commits/main)
+[![PowerShell](https://img.shields.io/badge/setup-PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)](./scripts/install_kirzkit.ps1)
 
-## Why KirzKit Exists
+KirzKit is a local AI orchestration layer for software builders. It equips Codex, Claude Code, Cursor, Antigravity, Gemini, and other agent runners with a project-local operating system for planning, routing, execution, and validation.
 
-Most AI coding sessions fail for predictable reasons:
-- no project memory
-- no stable workflow
-- no reusable specialist context
-- weak planning before execution
-- inconsistent outputs across tools
+Instead of repeatedly telling an AI how to approach architecture, frontend work, security, testing, research, deployment, or design, you give it one reusable project brain.
 
-KirzKit solves that by giving each project a deployable AI brain:
-- specialist agents
-- modular skill packs
-- workflow-driven execution
-- project activation docs
-- validation-first operating rules
+> KirzKit is not another prompt collection. It is an operating model for turning a general-purpose coding agent into a structured delivery team.
 
-The result is not "just prompts." It is a repeatable build system for AI-assisted work.
+## Why KirzKit?
 
-## What KirzKit Is
+AI coding tools are powerful, but their output often breaks down when a task needs more than code generation:
 
-KirzKit is:
-- a reusable `.agent` toolkit
-- a project bootstrap layer for AI workflows
-- a plan-first execution system
-- a way to make agents more consistent across projects
+- context disappears between sessions
+- planning is skipped
+- the wrong specialist approach is used
+- quality checks are inconsistent
+- every project starts from zero
 
-KirzKit is not:
-- a frontend framework
-- a backend framework
-- a runtime package your app depends on
-- a replacement for engineering judgment or validation
+KirzKit gives your agent a consistent way to work:
 
-## Core Idea
-
-KirzKit works in three layers:
-
-1. `source brain`
-   - the toolkit repository itself
-2. `global brain`
-   - your installed shared copy, usually at `~/.agent`
-3. `project brain`
-   - the `.agent` directory deployed into a specific project
-
-That project-local brain is what your AI should actually use when building.
+| Without KirzKit | With KirzKit |
+| --- | --- |
+| One general-purpose assistant | An orchestrator that routes to specialist agents and skills |
+| Repeated setup prompts | A reusable project-local `.agent` brain |
+| Implementation starts immediately | Complex work begins with planning and architecture |
+| Validation depends on the prompt | Testing, security, accessibility, and review checks are routed automatically |
+| Knowledge is trapped in one chat | Workflows and operating rules travel with the project |
 
 ## What You Get
 
-KirzKit provides:
-- specialist agent personas for architecture, frontend, backend, database, testing, security, and planning
-- modular skills that can be loaded on demand
-- workflow guides like `/plan`, `/debug`, `/deploy`, `/test`, and design-focused flows
-- activation files for different model ecosystems
-- a generated `MASTER_KNOWLEDGE_MAP.md` for capability discovery
-- a generated `ACTIVATE_KIRZKIT.md` handoff file for agents that do not auto-load `.agent`
-- bootstrap and doctor commands for setup and validation
+The repository currently includes:
 
-## Default Operating Loop
+- **26 specialist agents** covering architecture, frontend, backend, databases, security, testing, DevOps, product, design, growth, and more
+- **200+ modular skills** for engineering, UI/UX, research, automation, infrastructure, content, video, diagrams, and product work
+- **16 workflow guides** including `/plan`, `/debug`, `/deploy`, `/test`, `/preview`, and `/orchestrate`
+- **multi-agent routing** that selects the right expertise for the task
+- **validation-first guardrails** that require relevant checks before work is declared complete
+- **model-specific activation files** for Codex, Claude Code, Cursor, Antigravity, Gemini, and other agent environments
+- **project bootstrap and doctor commands** for installation and verification
 
-KirzKit is designed around this loop:
+Counts evolve as KirzKit grows. The generated `.agent/MASTER_KNOWLEDGE_MAP.md` is the source of truth inside an initialized project.
 
-1. refine the request
-2. start with `/plan`
-3. identify the right agents and skills
-4. execute with direct action where safe
-5. validate before calling the work complete
+## How It Works
 
-This is the difference between "AI autocomplete" and "AI operator."
+KirzKit uses three portable layers:
+
+```text
+KirzKit repository        ~/.agent                 your project/.agent
+Source brain        →     Global brain       →     Active project brain
+```
+
+The active project brain contains the agents, skills, workflows, references, and rules your AI uses while building.
+
+For a request such as:
+
+```text
+Build a secure, responsive SaaS dashboard with authentication and analytics.
+```
+
+KirzKit can route the work through:
+
+```text
+plan → architecture → product/UI → frontend → auth/security → testing → validation
+```
+
+You describe the outcome. KirzKit chooses the operating path.
 
 ## Quick Start
 
-Clone the repository and install KirzKit globally:
+KirzKit currently provides a PowerShell setup workflow.
+
+### 1. Clone and install
 
 ```powershell
 git clone https://github.com/kirawebdesigner/KirzKit.git
@@ -82,27 +83,79 @@ cd KirzKit
 powershell -ExecutionPolicy Bypass -File .\scripts\install_kirzkit.ps1
 ```
 
-Then bootstrap any project:
+This synchronizes the shared KirzKit brain to `~/.agent`.
+
+### 2. Initialize a project
+
+Set the path to your KirzKit clone, move into any project, and initialize it:
 
 ```powershell
+$KirzKit = "C:\path\to\KirzKit"
 cd C:\path\to\your-project
-C:\Users\kirub\kirzkit_openclaw\kirzkit\scripts\kirzkit.ps1 init
-C:\Users\kirub\kirzkit_openclaw\kirzkit\scripts\kirzkit.ps1 doctor
+
+& "$KirzKit\scripts\kirzkit.ps1" init
+& "$KirzKit\scripts\kirzkit.ps1" doctor
 ```
 
-After initialization, your project will contain:
+Your project will receive:
 
-- `.agent/agents`
-- `.agent/skills`
-- `.agent/workflows`
-- `.agent/references`
-- `.agent/MASTER_KNOWLEDGE_MAP.md`
-- `.agrules`
-- `ACTIVATE_KIRZKIT.md`
+```text
+.agent/
+├── agents/
+├── skills/
+├── workflows/
+├── references/
+├── MASTER_KNOWLEDGE_MAP.md
+└── SKILL.md
+
+.agrules
+ACTIVATE_KIRZKIT.md
+```
+
+### 3. Activate KirzKit
+
+If your AI tool loads project instructions automatically, start complex work with:
+
+```text
+/plan
+```
+
+Otherwise, point it to `ACTIVATE_KIRZKIT.md` or use:
+
+```text
+Load KirzKit from this project's `.agent` folder. Use
+`.agent/MASTER_KNOWLEDGE_MAP.md` as the capability index. Start in `/plan`
+mode, identify the relevant specialist agents and skills, execute with the
+smallest safe solution, and validate the result before delivery.
+```
+
+## The KirzKit Operating Loop
+
+1. **Understand** — turn the request into a concrete objective.
+2. **Plan** — map scope, architecture, dependencies, and risks when needed.
+3. **Route** — select the right agents, skills, and workflow.
+4. **Execute** — take direct action and parallelize independent work safely.
+5. **Validate** — run the relevant tests, reviews, scans, or visual checks.
+6. **Deliver** — return a verified result instead of an untested suggestion.
+
+The default philosophy is simple: **architect when necessary, keep the solution lean, and verify before claiming success.**
+
+## Example Use Cases
+
+KirzKit is designed for work that benefits from structured specialist judgment:
+
+- building SaaS products and internal tools
+- planning application architecture and APIs
+- creating polished responsive interfaces
+- reviewing accessibility and design systems
+- debugging failures and improving test coverage
+- designing databases, authentication, and backend systems
+- performing security reviews and hardening
+- automating deployment and infrastructure workflows
+- generating research, reports, diagrams, presentations, and videos
+- coordinating larger tasks across multiple AI agents
 
 ## CLI
-
-KirzKit currently includes these core commands:
 
 ```powershell
 .\scripts\kirzkit.ps1 help
@@ -111,94 +164,61 @@ KirzKit currently includes these core commands:
 .\scripts\kirzkit.ps1 doctor
 ```
 
-### Command Overview
+| Command | Purpose |
+| --- | --- |
+| `help` | Show commands and current source-pack counts |
+| `sync` | Refresh the shared brain at `~/.agent` |
+| `init` | Deploy KirzKit into the selected project |
+| `doctor` | Validate the source, global brain, and project setup |
 
-- `help`
-  - shows commands and current source counts
-- `sync`
-  - copies the latest source brain into your global `~/.agent`
-- `init`
-  - deploys KirzKit into the current project
-- `doctor`
-  - validates source, global install, and project-local setup
-
-## How To Use It With AI Tools
-
-### If the tool auto-loads `.agent`
-
-Work inside the initialized project and start with:
-
-```text
-/plan
-```
-
-### If the tool does not auto-load `.agent`
-
-Use the generated `ACTIVATE_KIRZKIT.md` file or paste a prompt like this:
-
-```text
-Load KirzKit from this project's `.agent` folder. Use `.agent/MASTER_KNOWLEDGE_MAP.md` as the capability index. Start in `/plan` mode, identify the relevant specialist agents and skills, then proceed with implementation only after the plan is clear.
-```
-
-### Model-specific entry files
-
-- `GEMINI.md`
-- `CLAUDE.md`
-- `SKILL.md`
-- `PROMPT.md`
-
-These help different model environments adopt the KirzKit operating style.
-
-## Example Use Cases
-
-KirzKit is especially useful for:
-- SaaS product building
-- React + Supabase apps
-- fast planning and architecture work
-- design-to-code workflows
-- structured bug fixing and debugging
-- reusable AI workflows across many projects
-- local-first solo founder development
-
-## Project Structure
+## Repository Structure
 
 ```text
 KirzKit/
 ├── agents/        # Specialist agent personas
-├── skills/        # Modular skill packs
-├── workflows/     # Command-style workflow guides
-├── references/    # Supporting docs for agents, skills, workflows
-├── scripts/       # Install, bootstrap, validation, and support scripts
+├── skills/        # Modular capability packs
+├── workflows/     # Repeatable command-style workflows
+├── references/    # Supporting operating knowledge
+├── scripts/       # Install, bootstrap, and validation tools
 ├── assets/        # Templates and supporting assets
-├── GEMINI.md      # Gemini-facing root persona
-├── CLAUDE.md      # Claude-facing root persona
-├── SKILL.md       # Root skill definition
-└── PROMPT.md      # Generic activation and operating prompt
+├── SKILL.md       # Master orchestrator definition
+├── CLAUDE.md      # Claude Code entry point
+├── GEMINI.md      # Gemini entry point
+└── PROMPT.md      # Generic activation prompt
 ```
 
-## Philosophy
+## What KirzKit Is Not
 
-KirzKit is built on a few hard rules:
-- plan before implementation
-- use specialist context instead of vague general prompts
-- keep project brains local and portable
+KirzKit is not:
+
+- a frontend or backend framework
+- a runtime dependency for your application
+- a replacement for tests, security review, or engineering judgment
+- magic autonomy without oversight
+
+It is the operating layer that helps your AI use those practices more consistently.
+
+## Project Principles
+
+- plan complex work before implementation
+- route tasks to specialist context
+- keep solutions as small as the problem allows
+- store the AI operating brain with the project
 - treat AI as an orchestrator, not a source of truth
 - validate outputs before trusting them
 
-## Recommended GitHub About
+## Contributing
 
-Use this in the repo About field:
+Ideas, bug reports, improvements, new skills, and workflow contributions are welcome. Open an [issue](https://github.com/kirawebdesigner/KirzKit/issues) or submit a pull request.
 
-`Local AI operating system for coding agents: specialist personas, reusable skills, workflow-driven project brains, and plan-first execution for high-leverage software building.`
+## Support the Project
 
-Suggested topics:
+If KirzKit improves the way you build with AI:
 
-`ai-agents`, `developer-tools`, `prompt-engineering`, `automation`, `codex`, `claude`, `gemini`, `workflow`, `productivity`, `saas`, `supabase`, `agentic-ai`
+1. **Star the repository**
+2. **Share it with another builder**
+3. **Open an issue with your workflow ideas**
 
-## Notes
+[**⭐ Star KirzKit on GitHub**](https://github.com/kirawebdesigner/KirzKit)
 
-- counts of agents, skills, and workflows change over time
-- the generated `MASTER_KNOWLEDGE_MAP.md` is the best source of current installed capability truth
-- KirzKit works best when the AI environment can read the project-local `.agent` directory directly
-
-Built by Kirubel Daniel.
+Built by **Kirubel Daniel** for builders who want AI agents to operate with more structure, context, and accountability.
