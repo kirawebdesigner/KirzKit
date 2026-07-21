@@ -21,9 +21,9 @@ the result.
 
 ## Main Component Foundation: Astryx
 
-For new React interfaces without a mandated existing system, KirzKit prefers
-[Facebook Astryx](https://github.com/facebook/astryx) as the component
-foundation. Astryx provides accessible typed components, theming, dark mode,
+For new React interfaces without a mandated existing system, KirzKit may use
+[Facebook Astryx](https://github.com/facebook/astryx) as an optional component
+candidate. Astryx provides accessible typed components, theming, dark mode,
 templates, and an agent-ready CLI. It complements the taste skill's design
 direction and does not replace KirzKit's routing.
 
@@ -107,7 +107,7 @@ These are mandatory unless the user explicitly says not to use that route.
 | Over-engineering / bloat / "do less" | `ponytail`, plus `ponytail-audit` for repo-wide scan |
 | Third-party skill install or audit | `skill-security-auditor` and `skillspector` before trusting it |
 | Security review | `vulnerability-scanner`, `red-team-tactics`, `ai-security`, relevant security agent |
-| UI/web app build or redesign | `taste-skill` first, then Astryx for React components and the relevant UI/accessibility skills |
+| UI/web app build or redesign | `taste-skill` first, then an existing system or optional Astryx components, plus relevant UI/accessibility skills |
 | After frontend implementation | `playwright-e2e-pro` or `webapp-testing`; capture screenshots when visual quality matters |
 | Accessibility-sensitive UI | `a11y-wcag-auditor` is mandatory |
 | shadcn/Tailwind UI | `shadcn-ui-master`, `tailwind-patterns`, `ui-styling` |
@@ -152,7 +152,9 @@ These are mandatory unless the user explicitly says not to use that route.
 
 ## Skill Inventory
 
-KirzKit currently has **141 modular skills**:
+The canonical source-pack counts are generated in [`INVENTORY.md`](./INVENTORY.md).
+The legacy alias list below is retained for discoverability; do not use it for
+counts.
 
 `a11y-wcag-auditor`, `ab-test-master`, `aeo`,
 `ai-agent-saas-architecture`, `ai-security`, `api-design-reviewer`,

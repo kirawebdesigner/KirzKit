@@ -13,9 +13,14 @@ $PERSONA_FILES = @("GEMINI.md", "CLAUDE.md", "SKILL.md", "PROMPT.md", "README.md
 function Get-BrainCounts {
     param([string]$BaseDir)
 
+    $agentFiles = Get-ChildItem (Join-Path $BaseDir "agents") -File -Filter *.md -ErrorAction SilentlyContinue |
+        Where-Object { $_.Name -notin @("README.md", "CONTRIBUTING.md", "CONTRIBUTING_zh-CN.md") }
+    $skillDirs = Get-ChildItem (Join-Path $BaseDir "skills") -Directory -ErrorAction SilentlyContinue |
+        Where-Object { Test-Path (Join-Path $_.FullName "SKILL.md") }
+
     return [pscustomobject]@{
-        Agents = (Get-ChildItem (Join-Path $BaseDir "agents") -File -Filter *.md -ErrorAction SilentlyContinue | Measure-Object).Count
-        Skills = (Get-ChildItem (Join-Path $BaseDir "skills") -Directory -ErrorAction SilentlyContinue | Measure-Object).Count
+        Agents = ($agentFiles | Measure-Object).Count
+        Skills = ($skillDirs | Measure-Object).Count
         Workflows = (Get-ChildItem (Join-Path $BaseDir "workflows") -File -Filter *.md -ErrorAction SilentlyContinue | Measure-Object).Count
     }
 }

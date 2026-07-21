@@ -49,9 +49,10 @@ KirzKit gives your agent a consistent way to work:
 
 The repository currently includes:
 
-- **23 top-level specialist agent personas**, plus folder-based and mirrored agency agents covering architecture, frontend, backend, databases, security, testing, DevOps, product, design, growth, and more
-- **200+ modular skills** for engineering, UI/UX, research, automation, infrastructure, content, video, diagrams, and product work
-- **16 workflow guides** including `/plan`, `/debug`, `/deploy`, `/test`, `/preview`, and `/orchestrate`
+- **23 canonical specialist agent personas**, plus folder-based and mirrored agency agents
+- **201 top-level installable skill packs**, plus nested variants and supporting packs
+- **16 top-level workflow guides**, plus nested workflow references
+- A generated [`INVENTORY.md`](./INVENTORY.md) with the current counts and file-level inventory
 - **multi-agent routing** that selects the right expertise for the task
 - **validation-first guardrails** that require relevant checks before work is declared complete
 - **model-specific activation files** for Codex, Claude Code, Cursor, Antigravity, Gemini, and other agent environments
@@ -66,11 +67,11 @@ design-direction authority. It reads the brief, audience, references, brand
 constraints, and accessibility needs before choosing visual language,
 typography, palette, layout, motion, and density.
 
-For new React interfaces without an existing or mandated design system,
-KirzKit prefers [Facebook Astryx](https://github.com/facebook/astryx) as the
-component foundation. Astryx provides accessible typed components, themes,
-dark mode, templates, and an agent-ready CLI. Existing project conventions or
-official systems take precedence, and Astryx should be validated because it is
+For new React interfaces, [Facebook Astryx](https://github.com/facebook/astryx)
+is an optional preferred candidate when the project has no existing or mandated
+design system. Astryx provides accessible typed components, themes, dark mode,
+templates, and an agent-ready CLI. Existing project conventions or official
+systems always take precedence, and Astryx should be validated because it is
 currently beta.
 
 The practical operating loop is:
@@ -248,6 +249,17 @@ KirzKit is designed for work that benefits from structured specialist judgment:
 .\scripts\kirzkit.ps1 init
 .\scripts\kirzkit.ps1 doctor
 ```
+
+The source inventory is generated and checked with Python:
+
+```powershell
+python scripts/inventory.py
+python scripts/inventory.py --check
+```
+
+CI runs the check on every push and pull request. Metadata warnings identify
+legacy packs that still need normalization; stale inventory or missing core
+files fail validation.
 
 | Command | Purpose |
 | --- | --- |
