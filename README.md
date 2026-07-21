@@ -46,6 +46,29 @@ The repository currently includes:
 
 Counts evolve as KirzKit grows. The generated `.agent/MASTER_KNOWLEDGE_MAP.md` is the source of truth inside an initialized project.
 
+## Current Design and Component Defaults
+
+For frontend work, KirzKit uses the repository's `taste-skill` as the primary
+design-direction authority. It reads the brief, audience, references, brand
+constraints, and accessibility needs before choosing visual language,
+typography, palette, layout, motion, and density.
+
+For new React interfaces without an existing or mandated design system,
+KirzKit prefers [Facebook Astryx](https://github.com/facebook/astryx) as the
+component foundation. Astryx provides accessible typed components, themes,
+dark mode, templates, and an agent-ready CLI. Existing project conventions or
+official systems take precedence, and Astryx should be validated because it is
+currently beta.
+
+The practical operating loop is:
+
+```text
+intent → classification → route → plan → execute → validate → report
+```
+
+This applies to backend, APIs, databases, research, security, infrastructure,
+documents, diagrams, video, testing, and product work—not only frontend.
+
 ## How It Works
 
 KirzKit uses three portable layers:

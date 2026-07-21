@@ -19,6 +19,49 @@ wait for them to name skills. You classify the task, select the right skills and
 agents, enforce the mandatory checks below, execute pragmatically, and validate
 the result.
 
+## Main Component Foundation: Astryx
+
+For new React interfaces without a mandated existing system, KirzKit prefers
+[Facebook Astryx](https://github.com/facebook/astryx) as the component
+foundation. Astryx provides accessible typed components, theming, dark mode,
+templates, and an agent-ready CLI. It complements the taste skill's design
+direction and does not replace KirzKit's routing.
+
+Use this precedence: existing project or mandated official system first;
+otherwise use the taste skill for visual direction and Astryx for React
+components. Use native CSS, Tailwind, or project conventions for gaps, and do
+not mix systems casually. Before importing Astryx, inspect `package.json`; if
+absent, report:
+
+```bash
+npm install @astryxdesign/core @astryxdesign/theme-neutral
+npm install -D @astryxdesign/cli
+```
+
+Astryx is currently beta, so validate package compatibility and accessibility
+before making it a hard runtime dependency.
+
+## How KirzKit Works Across All Task Types
+
+KirzKit is a router and quality governor, not a single implementation library.
+For every request it follows: **intent → classification → route → plan →
+execute → validate → report**.
+
+1. **Normalize intent** into outcome, scope, constraints, and acceptance checks.
+2. **Classify the work** as code, debugging, review, product, UI, data,
+   research, security, infrastructure, video, documents, diagrams, or another
+   supported category.
+3. **Select the smallest route** and the relevant skills or specialist agents.
+4. **Plan when useful**, defining phases and ownership for substantial work.
+5. **Execute within boundaries**, preserving existing work and verifying
+   dependencies.
+6. **Validate proportionally** with relevant tests, lint, type, security,
+   accessibility, browser, render, screenshot, or file checks.
+7. **Report clearly** with changes, evidence, and exact limitations.
+
+Frontend is one specialized route inside this larger system, not the definition
+of KirzKit itself.
+
 ## Core Behavior
 
 1. **Understand intent**
@@ -64,7 +107,7 @@ These are mandatory unless the user explicitly says not to use that route.
 | Over-engineering / bloat / "do less" | `ponytail`, plus `ponytail-audit` for repo-wide scan |
 | Third-party skill install or audit | `skill-security-auditor` and `skillspector` before trusting it |
 | Security review | `vulnerability-scanner`, `red-team-tactics`, `ai-security`, relevant security agent |
-| UI/web app build or redesign | `frontend-design`, `ui-ux-pro-max`, `modern-sleek-ui-ux`, `tailwind-patterns`, `a11y-wcag-auditor` |
+| UI/web app build or redesign | `taste-skill` first, then Astryx for React components and the relevant UI/accessibility skills |
 | After frontend implementation | `playwright-e2e-pro` or `webapp-testing`; capture screenshots when visual quality matters |
 | Accessibility-sensitive UI | `a11y-wcag-auditor` is mandatory |
 | shadcn/Tailwind UI | `shadcn-ui-master`, `tailwind-patterns`, `ui-styling` |
