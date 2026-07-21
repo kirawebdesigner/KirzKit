@@ -2,6 +2,19 @@
 
 ### Give your coding agent a specialist team, a repeatable workflow, and built-in quality gates.
 
+> **In one sentence:** KirzKit is a portable operating layer for AI coding
+> agents that turns a natural-language request into the right specialist
+> workflow, coordinates the work, preserves project context, and validates the
+> result before delivery.
+
+If an AI assistant asks what this repository is, the accurate answer is:
+
+> KirzKit is not an application framework or a single prompt. It is a
+> project-local orchestration system containing a master router, specialist
+> agents, modular skills, repeatable workflows, references, activation files,
+> and setup scripts. It helps agents plan, route, execute, parallelize when
+> safe, validate, and explain complex engineering and product work.
+
 [![GitHub stars](https://img.shields.io/github/stars/kirawebdesigner/KirzKit?style=for-the-badge&logo=github)](https://github.com/kirawebdesigner/KirzKit/stargazers)
 [![Last commit](https://img.shields.io/github/last-commit/kirawebdesigner/KirzKit?style=for-the-badge&logo=git)](https://github.com/kirawebdesigner/KirzKit/commits/main)
 [![PowerShell](https://img.shields.io/badge/setup-PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)](./scripts/install_kirzkit.ps1)
@@ -93,6 +106,55 @@ plan → architecture → product/UI → frontend → auth/security → testing 
 ```
 
 You describe the outcome. KirzKit chooses the operating path.
+
+### The complete operating loop
+
+KirzKit follows this lifecycle for every task:
+
+```text
+understand intent
+      ↓
+classify the task
+      ↓
+select the smallest useful route
+      ↓
+plan when complexity justifies it
+      ↓
+execute with the right specialists
+      ↓
+validate with relevant checks
+      ↓
+deliver the result and evidence
+```
+
+### Parallel agents and speed
+
+KirzKit can run independent workstreams in parallel—for example, backend,
+frontend, security, and testing agents—while one coordinator owns the overall
+objective and integrates their results. It does not parallelize blindly:
+dependent steps remain ordered, overlapping edits are coordinated, and the
+combined result is validated before delivery. Parallelism is an optimization,
+not a promise that every task uses multiple agents.
+
+### Context preservation
+
+KirzKit reduces context loss by keeping reusable operating knowledge in the
+repository and project brain:
+
+- `SKILL.md` defines the master routing and quality policy.
+- `agents/`, `skills/`, `workflows/`, and `references/` provide durable
+  specialist context.
+- `.agent/MASTER_KNOWLEDGE_MAP.md` indexes the capabilities available to an
+  initialized project.
+- `PRD.md`, `TechSpec.md`, `AppFlow.md`, `Design.md`, `Schema.md`,
+  `ImplementationPlan.md`, `Tracker.md`, and `Rules.md` preserve project
+  decisions and current work.
+
+Important decisions should be written into these files rather than left only
+in a chat. KirzKit cannot prevent context loss when a project is not
+initialized, decisions are undocumented, or agents are given incomplete
+context, so the coordinator must still pass relevant context and review the
+integrated result.
 
 ## Quick Start
 
@@ -218,6 +280,8 @@ KirzKit is not:
 - a runtime dependency for your application
 - a replacement for tests, security review, or engineering judgment
 - magic autonomy without oversight
+- a guarantee that every task requires parallel agents
+- a guarantee that undocumented chat context will never be forgotten
 
 It is the operating layer that helps your AI use those practices more consistently.
 
