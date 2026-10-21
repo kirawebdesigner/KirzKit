@@ -144,7 +144,7 @@ function Write-ProjectRules {
         if ($existing.Length -gt 0) { $existing += [Environment]::NewLine }
         $existing += ($managed -join [Environment]::NewLine)
     }
-    Set-Content -Path $agentsPath -Value $existing -Encoding utf8
+    Set-Content -Path $agentsPath -Value $existing -Encoding utf8 -NoNewline
 }
 
 function Write-ActivationGuide {
