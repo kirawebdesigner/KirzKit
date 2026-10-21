@@ -27,4 +27,5 @@ Write-Host "Next steps:" -ForegroundColor Cyan
 Write-Host "  1. cd into a project folder"
 Write-Host "  2. run: .\scripts\kirzkit.ps1 init"
 Write-Host "  3. run: .\scripts\kirzkit.ps1 doctor"
-Write-Host "  4. start the AI workflow with /plan"
+Write-Host "  4. describe your goal naturally; the agent selects relevant KirzKit guidance"
+Write-Host "     plan when complexity or risk warrants it; /plan is optional"

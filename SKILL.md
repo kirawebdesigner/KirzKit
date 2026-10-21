@@ -43,21 +43,44 @@ before making it a hard runtime dependency.
 
 ## How KirzKit Works Across All Task Types
 
-KirzKit is a router and quality governor, not a single implementation library.
-For every request it follows: **intent → classification → route → plan →
-execute → validate → report**.
+KirzKit is an intent-to-execution operating layer, not a skill menu. The user
+describes the outcome in ordinary language—even rough notes, incomplete ideas,
+or a multi-part request. **Do not make them invoke KirzKit, name a skill, pick
+an agent, or write a formal technical brief.** When these instructions are
+installed and loaded by the IDE, apply this routing to each request by default.
 
-1. **Normalize intent** into outcome, scope, constraints, and acceptance checks.
-2. **Classify the work** as code, debugging, review, product, UI, data,
-   research, security, infrastructure, video, documents, diagrams, or another
-   supported category.
-3. **Select the smallest route** and the relevant skills or specialist agents.
-4. **Plan when useful**, defining phases and ownership for substantial work.
-5. **Execute within boundaries**, preserving existing work and verifying
-   dependencies.
-6. **Validate proportionally** with relevant tests, lint, type, security,
-   accessibility, browser, render, screenshot, or file checks.
-7. **Report clearly** with changes, evidence, and exact limitations.
+Follow: **listen → understand → route → act → verify → report**.
+
+1. **Listen for the desired outcome.** Read the whole request as intent, not as
+   a keyword-matching exercise. Separate the user's goal from examples,
+   preferences, constraints, existing context, and explicitly excluded work.
+2. **Normalize silently.** Form an internal brief: outcome, likely scope,
+   constraints, acceptance checks, and assumptions. For rough or exploratory
+   input, infer a useful first step and state the interpretation briefly; do
+   not force the user to translate their thoughts into technical language.
+3. **Classify and discover capabilities.** Identify the task domains and inspect
+   the installed knowledge map and relevant skill/agent descriptions. Select
+   the smallest useful route. Load only the capabilities needed for this task;
+   do not dump the full inventory into context or activate skills by keyword
+   alone.
+4. **Choose an execution shape.** Act directly for small work. Use a concise
+   plan when work is multi-step, cross-domain, high-impact, or risky. Delegate
+   only when the runtime actually supports agents and workstreams are
+   independent; otherwise use the relevant specialist guidance yourself.
+5. **Clarify only when blocked.** Make low-risk assumptions and proceed. Ask a
+   focused question only when an unknown would materially change the result,
+   create significant risk, or require user authorization. Never ask the user
+   which skill or agent to use.
+6. **Execute within boundaries**, preserving existing work and project
+   conventions; validate proportionally with relevant tests, lint, types,
+   security, accessibility, browser, render, screenshot, or file checks.
+7. **Report clearly** with the outcome, evidence, limitations, and any important
+   assumptions. Keep the user oriented without exposing internal routing as
+   ceremony.
+
+If the IDE has not loaded KirzKit's project instructions, automatic behavior
+cannot be assumed: use that IDE's supported project-instruction mechanism, and
+keep `ACTIVATE_KIRZKIT.md` as a manual fallback rather than the normal workflow.
 
 Frontend is one specialized route inside this larger system, not the definition
 of KirzKit itself.
@@ -65,16 +88,17 @@ of KirzKit itself.
 ## Core Behavior
 
 1. **Understand intent**
-   - Convert messy user language into a concrete objective.
+   - Interpret messy user language into an outcome without requiring a formal prompt.
+   - Reflect the understood request briefly when it improves alignment; then proceed.
    - Make reasonable assumptions when the risk is low.
-   - Ask only when missing information would materially change the result.
-   - For vague prompts, use `prompt-engineering-master` internally.
+   - Ask only when missing information blocks safe, useful progress or materially changes the outcome.
+   - Use `prompt-engineering-master` internally when it helps; never make the user rewrite their request.
 
 2. **Route automatically**
-   - Pick skills and agents by task type.
-   - Combine skills when needed.
+   - Pick relevant skills, agents, and workflows from the installed capability map and their descriptions.
+   - Combine capabilities only when the outcome needs multiple domains; avoid both under-routing and loading everything.
    - Prefer installed KirzKit skills before inventing new process.
-   - Use Agency agents in `agents/agency-agents/` for specialist judgment.
+   - Use specialist agents when the host supports them; do not claim delegation that did not occur.
 
 3. **Architect first when needed**
    - Use `architecture`, `software-architect`, `backend-architect`,
@@ -252,4 +276,3 @@ Mirrored Agency agents include:
   available; otherwise provide editable XML and clear export notes.
 - For codebase audits with `improve`, remember it is read-only: plans only,
   implementation only through a separate execution path.
-

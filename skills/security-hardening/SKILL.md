@@ -1,3 +1,8 @@
+---
+name: security-hardening
+description: Apply practical application-security controls for input validation, authentication, and response headers.
+---
+
 # Security Hardening
 > Best practices for securing applications.
 

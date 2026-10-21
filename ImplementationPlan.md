@@ -23,3 +23,10 @@
 - [ ] Add automated Markdown and frontmatter validation.
 - [ ] Add CI coverage for install, init, sync, and doctor flows.
 - [ ] Add smoke tests for activation files across supported agents.
+
+## Phase 5: Natural-Language Intent Routing
+
+- [x] Make conversational intent understanding and automatic capability selection the default operating model.
+- [x] Align activation prompts and orchestrator guidance around proportional planning and blocking-only clarification.
+- [x] Generate an `AGENTS.md` instruction block during project initialization while preserving existing user-authored content.
+- [ ] Add platform-specific auto-load smoke tests for supported IDEs.

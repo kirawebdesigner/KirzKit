@@ -1,3 +1,8 @@
+---
+name: project-planner
+description: Break substantial software work into phases, architecture decisions, dependencies, and testable tasks.
+---
+
 # Project Planning
 > Methodologies for breaking down work.
 

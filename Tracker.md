@@ -1,21 +1,28 @@
 # Task Tracker
 
-## Current Sprint: Orchestrator Foundations
+## Current Sprint: Intent Routing and Release Readiness
 
 - [x] Integrate `design-taste-frontend` as the primary frontend design route.
 - [x] Integrate Astryx as the preferred new React component foundation.
 - [x] Document KirzKit's all-task operating lifecycle.
 - [x] Add repository planning and governance documents.
-- [ ] Add automated source-pack count verification.
-- [ ] Add CI for PowerShell install/init/doctor smoke tests.
+- [x] Make natural-language intent routing the default interaction model.
+- [x] Add a repeatable PowerShell project-rules smoke test to CI.
+- [ ] Add full PowerShell sync/init/doctor integration tests.
+- [ ] Add platform-specific IDE auto-load smoke tests.
+- [ ] Normalize legacy frontmatter warnings and make required metadata fail validation.
 
 ## Bugs and Blockers
 
-- No known blocking defects for the documentation update.
-- GitHub CLI is unavailable in the current publishing environment; branch
-  publication may require manual pull-request creation.
+- Two skill packs currently warn about missing frontmatter names; see
+  `python scripts/inventory.py --check` for exact paths.
+- Repository-wide licensing and complete third-party provenance remain open
+  owner decisions; see `PROVENANCE.md`.
 
 ## Follow-up
 
-- Review counts in README and generated knowledge maps after capability changes.
-- Validate Astryx package versions before recommending it for production apps.
+- Review generated inventory counts after capability changes.
+- Audit upstream/legacy documentation and eliminate mismatched maintainer or
+  installation claims before presenting it as KirzKit-owned policy.
+- Decide repository-wide licensing and provenance/attribution requirements.
+- Validate Astryx package compatibility before recommending it for production apps.

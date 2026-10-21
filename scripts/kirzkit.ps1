@@ -107,14 +107,44 @@ function Write-ProjectRules {
 
     $agLines = @(
         "# KirzKit Project Rules",
-        "- Start complex work with /plan.",
-        "- Use MASTER_KNOWLEDGE_MAP.md in .agent to discover installed capabilities.",
-        "- Prefer specialist agents for architecture, database, backend, frontend, testing, and security work.",
+        "- Treat KirzKit as the default intent-to-execution layer whenever these project instructions are loaded.",
+        "- Understand natural-language requests, including rough ideas; select relevant skills, agents, and workflows yourself.",
+        "- Do not require a KirzKit command, /plan, formal brief, or user-selected capability.",
+        "- Use .agent/MASTER_KNOWLEDGE_MAP.md to discover capabilities; read only what this task needs.",
+        "- Plan proportionally; ask only when an unknown blocks safe/useful progress or materially changes the outcome.",
+        "- Use specialist agents only when the host runtime supports them and parallel work is genuinely independent.",
         "- Validate locally before declaring work complete.",
         "- Treat AI as an orchestrator, not a substitute for runtime verification."
     )
 
     $agLines | Set-Content -Path (Join-Path $ProjectDir ".agrules") -Encoding ascii
+
+    # Add an auto-discovered instruction file for IDEs that load AGENTS.md.
+    # Preserve user-authored content and replace only KirzKit's marked block.
+    $agentsPath = Join-Path $ProjectDir "AGENTS.md"
+    $begin = "<!-- BEGIN KIRZKIT MANAGED INSTRUCTIONS -->"
+    $end = "<!-- END KIRZKIT MANAGED INSTRUCTIONS -->"
+    $managed = @(
+        $begin,
+        "## KirzKit",
+        "Interpret the user's natural-language goal, including rough thoughts, and choose the relevant installed skills/agents without asking the user to name them.",
+        "Use .agent/MASTER_KNOWLEDGE_MAP.md as the capability index and load only relevant guidance.",
+        "Act directly on small tasks; plan when complexity or risk warrants it. Ask only when blocked, materially uncertain, or authorization is needed.",
+        "Delegate only when this IDE/runtime supports agents and the workstreams are independent. Validate relevant results and report evidence honestly.",
+        $end
+    )
+    $existing = if (Test-Path $agentsPath) { Get-Content -Path $agentsPath -Raw } else { "" }
+    $blockPattern = "(?s)$([regex]::Escape($begin)).*?$([regex]::Escape($end))"
+    if ($existing -match $blockPattern) {
+        $existing = [regex]::Replace($existing, $blockPattern, ($managed -join [Environment]::NewLine))
+    } else {
+        if ($existing.Length -gt 0 -and !$existing.EndsWith([Environment]::NewLine)) {
+            $existing += [Environment]::NewLine
+        }
+        if ($existing.Length -gt 0) { $existing += [Environment]::NewLine }
+        $existing += ($managed -join [Environment]::NewLine)
+    }
+    Set-Content -Path $agentsPath -Value $existing -Encoding utf8
 }
 
 function Write-ActivationGuide {
@@ -141,14 +171,14 @@ function Write-ActivationGuide {
         '4. `.agent/references/workflows.md`',
         "",
         "## Default Operating Loop",
-        "1. Start with `/plan`.",
-        "2. Map the right agents and skills.",
-        "3. Execute in parallel where safe.",
-        "4. Validate before delivery.",
+        "1. Describe your goal naturally; KirzKit infers intent and scope.",
+        "2. KirzKit selects relevant capabilities from the installed capability map.",
+        "3. It acts directly on simple tasks and plans complex or risky work proportionally.",
+        "4. It validates relevant results before delivery.",
         "",
         "## Example Activation Prompt",
         '```text',
-        'Load KirzKit from this project''s `.agent` folder. Use `.agent/MASTER_KNOWLEDGE_MAP.md` as the capability index. Start in `/plan` mode, identify the relevant specialist agents and skills, then proceed with implementation only after the plan is clear.',
+        'Use the installed KirzKit instructions as your default. Understand my natural-language goal, choose relevant capabilities from `.agent/MASTER_KNOWLEDGE_MAP.md` without asking me to name them, plan only when complexity or risk warrants it, then act and validate.',
         '```',
         "",
         "## Model-Specific Notes",
@@ -157,9 +187,8 @@ function Write-ActivationGuide {
         "- Other models: use `.agent/SKILL.md` plus the knowledge map and workflow references.",
         "",
         '## If The AI Does Not Auto-Load `.agent`',
-        '- explicitly point it to `.agent/MASTER_KNOWLEDGE_MAP.md`',
-        "- tell it to read the relevant root persona file",
-        "- tell it to begin with `/plan`",
+        "- configure this IDE to load its supported project instruction file (for example `AGENTS.md`, `CLAUDE.md`, or `GEMINI.md`)",
+        "- if the IDE cannot auto-load project instructions, use the example activation prompt above once",
         "",
         "## Recommended Commands",
         "- `kirzkit doctor` -> validate source, global, and local setup",

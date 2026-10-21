@@ -1,5 +1,12 @@
 name: Validate KirzKit
 
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
   pull_request:
@@ -9,10 +16,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Check generated inventory and metadata
         run: python scripts/inventory.py --check
-      - name: Check repository whitespace
-        run: git diff --check
+      - name: Check changed-file whitespace
+        shell: bash
+        env:
+          EVENT_BEFORE: ${{ github.event.before }}
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then
+            git diff --check "origin/$BASE_REF...HEAD"
+          elif [[ "$EVENT_BEFORE" =~ ^0+$ ]]; then
+            git show --format= --check HEAD
+          else
+            git diff --check "$EVENT_BEFORE...HEAD"
+          fi
+
+  powershell-smoke-test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test PowerShell project-rule generation
+        shell: pwsh
+        run: ./scripts/test_project_rules.ps1

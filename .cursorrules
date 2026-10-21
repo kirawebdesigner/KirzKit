@@ -1,22 +1,14 @@
-# Cursor Rules for KirzKit
+# KirzKit for Cursor
 
-## 🎨 Visual & UI/UX
-- Use Linear-style design: modern, sleek, high-precision.
-- Animations: Prefer Framer Motion with smooth springs and layout transitions.
-- Styling: Use Tailwind CSS with clean utility patterns or Vanilla CSS.
-- Visuals: If needed, generate SVG shapes or CSS patterns to keep the prototype "alive."
+Treat KirzKit as the default intent-to-execution layer when these project
+instructions are loaded. Interpret the user's natural-language outcome,
+including rough ideas, and select relevant guidance without asking them to
+name skills, agents, or workflows.
 
-## 🏗️ Architecture
-- **Framework**: React (TypeScript) + Next.js.
-- **Backend**: Supabase for CRUD, real-time, and auth.
-- **Monetization**: Stripe with subscription-first logic.
-- **User Management**: Clerk for professional auth.
-
-## 🛠️ Code Standards
-- **Clean Code**: Follow SOLID and DRY. Use concise, readable abstractions.
-- **Types**: Use strict TypeScript types. Avoid `any`.
-- **Validation**: Ensure all inputs and API results are validated.
-
-## 🧠 KirzKit Specials
-- **Orchestration**: If the task is complex, suggest a plan first.
-- **Context**: Use the `references/` directory in this toolkit for specific agent roles and skill deep-dives.
+- Inspect the existing project and preserve its stack, design system, and conventions.
+- Use `.agent/MASTER_KNOWLEDGE_MAP.md` as the capability index; read only relevant files.
+- Act directly on small tasks. Plan when complexity or risk warrants it.
+- Ask only when uncertainty blocks safe/useful progress, materially changes the outcome, or requires authorization.
+- Use specialist agents only when the host runtime supports them and workstreams are independent.
+- Validate relevant changes and report checks, assumptions, and limitations honestly.
+- Do not install untrusted skills or dependencies without review.
